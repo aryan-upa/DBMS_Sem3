@@ -1,4 +1,4 @@
-# DBMS LAB Records
+# DBMS Records
 
 This repository contains details of the ***Database Management System*** class I took during my 2nd Year, ***Fall 2021***.
 
