@@ -5,7 +5,7 @@ This repository contains details of the ***Database Management System*** class I
 The semester was divided into 2 parts, module 1 and module 2 having mid-term and end-term examinations respectively.
 
 The Syllabus was following...
-![Img 1]()
+![Img 1](https://github.com/aryan-upa/DBMS_Sem3/blob/d4aca3d683282128bcca69e42ff130658a305331/Miscellaneous/BCSC-0003.jpg)
 
 ### Lecture Notes contains PPTs of: -
 
