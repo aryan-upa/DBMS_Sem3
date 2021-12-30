@@ -20,4 +20,4 @@ The Syllabus was following...
 
 **PPTs** – This Contains the PPTs of the respective professor.<br>
 **Assignments** – This Contains the assignment submitted throughout the semester.<br>
-**Assignment Questions** – This contains the Assignment question marked from 1 to 8.
+**Assignment Solutions** – This contains the Assignment solutions marked from 1 to 6.
