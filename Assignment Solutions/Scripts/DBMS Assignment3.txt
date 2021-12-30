@@ -1,0 +1,22 @@
+
+select * from student, apply;
+
+select sID, sName, GPA, cName, major from student natural join apply;
+
+select apply.* from apply inner join college on apply.cName = College.collegeName and College.state = 'CA';
+
+select sID, sName, GPA, cName from student natural join Apply where GPA > 3.7 and cName = 'Stanford';
+
+select sID, sName, GPA, sizeHS from Student natural join Apply where major = 'CS' and decision = 'N';
+
+select Student.*, Apply.cName, Apply.major, Apply.Decision from Student, apply, college where Student.sID = Apply.sID and apply.cName = college.collegeName and college.state = 'NY';
+
+select * from Student where sID not in ( select distinct sID from apply );
+
+select collegeName from college where collegeName not in ( select distinct cname from apply );
+
+select sID from apply group by sID having count(sID) = 1;
+
+select student.sName, student.GPA from student, college, apply where student.sID = apply.sID and apply.cname = college.collegeName and College.enrollment <= 25000;
+
+select s1.sID, s1.sName, s1.GPA, s2.sID, s2.sName, s2.GPA from student s1, student s2 where s1.gPA = s2.GPA and s1.sID <> s2.sID;

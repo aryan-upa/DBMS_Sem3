@@ -1,0 +1,38 @@
+Exercise 1
+
+create table Department(
+    Deptno number(3) primary key,
+    Dname varchar2(20) unique,
+    Location varchar2(20) not null constraint loc check ( Location = 'Delhi' or Location = 'Agra' or 	Location = 'Pune' )
+);
+create table Employee(
+    Empno varchar2(5) primary key constraint emp_no check ( Empno = 'E%' ),
+    Ename varchar2(20) unique,
+    Designation varchar2(20) not null,
+    Salary number(10) default 25000 constraint sal check ( Salary >= 15000 and Salary <= 50000 ),
+    DOB date not null,
+    Dno number(3) references Department
+);
+create table Candidate(
+    candidate_ID number(6) primary key,
+    Candidate_Name varchar2(20) not null,
+    Candidate_Email varchar2(30) unique constraint email check ( Candidate_Email = '%@%.%' ),
+    Candidate_Dept varchar2(2) default 'HR',
+    Manager_ID number(6) references Candidate(candidate_ID)
+);
+
+Exercise 2
+alter table College add primary key (cName);
+alter table Student add primary key (sID);
+alter table Apply add primary key (sID, cName, major);
+alter table Apply add constraint s_ID foreign key (sID) references Student add constraint c_name 	foreign key (cName) references College;
+alter table Apply modify ( major varchar(25) );
+alter table Apply add ( decision varchar(3) not null );
+alter table Apply modify ( decision char(1) );
+alter table Apply drop constraint c_name;
+alter table Student drop ( sizeHS );
+alter table College drop primary key;
+alter table Apply add constraint unique_pair unique (cName, major);
+alter table Apply add constraint c_name foreign key (cName) references College on delete cascade;
+alter table Apply add foreign key (sID) references Student on delete set null;
+alter table College rename column enrollment to enroll;

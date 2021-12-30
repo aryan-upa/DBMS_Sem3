@@ -1,0 +1,54 @@
+select count(*) from student;
+
+select AVG(GPA) from student;
+
+select MIN(GPA) as max_GPA, MAX(GPA) as max_GPA from student;
+
+select count(GPA) from (select GPA from Student where GPA >= 3.7);
+
+select max(GPA), avg(GPA), min(GPA) from Student;
+
+select count(*) as num_College from College;
+
+select count( distinct major ) from Apply;
+
+select count(*) as tot_apply from apply;
+
+select avg(distinct GPA) from Student;
+
+select count(decision) from ( select decision from apply where decision = 'Y' );
+
+select count(sName) from ( select sName from Student where GPA>=3.4 and sizeHS >= 1000 );
+
+select count(sID) from ( select sID from Apply where major = 'marine biology' );
+
+select decision, count(decision) from apply group by decision
+
+select major, count(major) from apply group by major
+
+select cname, count(cname) from apply group by cname
+
+select cname, major, count(major) from apply group by (cname,major)
+
+select cname, major, count(major) from apply group by (cname,major) having count(major) >= 2
+
+select cname, count(cname) from apply group by cname having count(cname) >= 3;
+
+select state, count(state) from college group by state having count(state) > 1;
+
+select sName from student group by sName having count(sName) > 1;
+
+select student.sID, count(Apply.sID) from student left join Apply on Student.sID = Apply.sID group by (Student.sID);
+
+select sname from student where sId in ( select sId from apply group by sId having count(sID) >=3);
+
+select sname from student where sID not in ( select sID from apply);
+
+select cName, Max(GPA), avg(GPA), min(GPA) from student natural join apply group by cName;
+
+select GPA, count(GPA) from student group by GPA;
+
+select count(sname) from student where sname like 'A%' or sname like 'C%' or sname like 'B%' ;
+
+
+

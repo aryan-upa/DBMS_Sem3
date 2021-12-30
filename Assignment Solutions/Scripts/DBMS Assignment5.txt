@@ -1,0 +1,49 @@
+select sID, sName from student where sID in ( select sId from apply where major = 'CS' );
+
+select sID, sName from student where sizeHS in ( select sizeHS from student where sName = 'Jay' );
+
+select sID, sName from student where sizeHS in ( select sizeHS from student where sName = 'Jay' ) and sName <> 'Jay';
+
+select sID, sName, GPA from student where GPA not in ( select GPA from student where sName = 'Irene' );
+
+select distinct cName from Apply where sID in ( select sID from student where sName like 'J%' );
+
+select distinct major from apply where sID in ( select sID from student where sName = 'Irene' );
+
+select sID, major from apply where major in ( select major from apply where sID in ( select sID from student where sName = 'Irene'));
+
+select sID, major from apply where major in ( select major from apply where sID in ( select sID from student where sName = 'Irene')) and sID not in ( select sID from student where sname = 'Irene' ); 
+
+select count(cname) from apply where sId in ( select sId from student where sName = 'Jay' );
+
+select sID from apply group by sID having count(sID)>=(select count(sID) from apply where sID in (select sID from student where sName = 'Jay'));
+
+select * from student where sID in ( select sID from apply where major = 'CS' minus select sID from apply where major = 'EE' ); 
+
+select cname from college C1 where exists ( select cname from college C2 where C1.state = C2.state and C1.cname <> C2.cname );
+
+select cname from college where enrollment = ( select max(enrollment) from college);
+
+select sname from student where GPA = ( select min(GPA) from student);
+
+select major from apply group by major having count(major) in (select max(count(major)) from apply group by major);
+
+select sID, sName, sizeHS from student where sizeHS not in ( select min(sizeHS) from student);
+
+select sname from student where sID in ( select sID from Apply where cname in ( select cName from apply where sID = 987));
+
+select distinct A.cname from apply A where not exists ( (select sID from student) minus (select sID from apply B where B.cName = A.cName));
+
+select sID from student where sID not in ( select distinct sID from apply where cName = 'Stanford' );
+
+select sID from student where sID in ( select sID from apply where cName = 'Stanford' intersect select sID from apply where cName = 'Berkeley' );
+
+select sName as List from student union select cName from college;
+
+create table ApplicationInfo as (select sID, sName, count(cName) as number_of_Application from student natural join Apply group by sID, sName );
+
+create table ApplicationData as (select S.sID, S.sname, A.cname, A.state from student S left join (select * from college natural join apply ) A on S.sID = A.sID );
+
+update apply set decision = 'N' where sID in ( select sID from apply where cname = 'Berkeley' ) and cname = 'Stanford';
+
+delete from apply where sID in ( select sID from apply where cName in ( select cName from college where state = 'NY' ));

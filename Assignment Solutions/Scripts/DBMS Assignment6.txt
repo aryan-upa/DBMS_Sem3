@@ -1,0 +1,40 @@
+alter table Student add ( DoB date );
+
+update student set Dob = '26-Jun-96' where sId = 123;
+update student set Dob = '07-Apr-95' where sId = 234;
+update student set Dob = '04-Feb-95' where sId = 345;
+update student set Dob = '24-Jul-97' where sId = 456;
+update student set Dob = '21-Dec-96' where sId = 567;
+update student set Dob = '27-Aug-96' where sId = 678;
+update student set Dob = '08-Oct-96' where sId = 789;
+update student set Dob = '27-Mar-97' where sId = 987;
+update student set Dob = '07-Mar-96' where sId = 876;
+update student set Dob = '08-Aug-98' where sId = 765;
+update student set Dob = '26-May-96' where sId = 654;
+update student set Dob = '27-Aug-98' where sId = 543;
+
+select round(avg(GPA),2) from student;
+
+select extract(year from DoB) from student where sizeHS < 1000;
+
+select floor((sysdate - DoB)/365) as Age from student, Dual;
+
+select upper(sName), lower(cName) from student natural join Apply;
+
+select substr(sName,4,1) from student;
+
+select sId, sName from student where length(sName) > 3;
+
+select * from student where mod(sID,2) = 0;
+
+select sqrt(900), sqrt(power(24,7)) from dual;
+
+select instr('Peter Piper picked a peck of pickled peppers. A peck of pickled peppers Peter Piper picked. If Peter Piper picked a peck of pickled peppers, Where the peck of pickled peppers Peter Piper picked?','pick',1,4)  as Occurance_6 from dual;
+
+select translate('Satya Nadella','adelNSty',12345678) as translate from dual;
+
+select sID, sName, to_char(DoB, 'Month DD,YYYY') from student;
+
+select to_date('26/02/2014', 'DD/MM/YY') from dual;
+
+select next_day(sysdate, 'Saturday'), last_day(sysdate) from dual;
