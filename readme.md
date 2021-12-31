@@ -21,3 +21,8 @@ The Syllabus was following...
 **PPTs** – This Contains the PPTs of the respective professor.<br>
 **Assignments** – This Contains the assignment submitted throughout the semester.<br>
 **Assignment Solutions** – This contains the Assignment solutions marked from 1 to 6.
+
+
+### Preffered TextBook
+[Elmasri and Navathe Fundamentals of Database Management System](https://github.com/aryan-upa/DBMS_Sem3/blob/474881ccade62e15c7bd663353f8c2b7116826f9/Miscellaneous/DBMS_Navathe_6th%20Edition.pdf)
+
