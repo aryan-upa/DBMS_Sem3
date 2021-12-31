@@ -23,6 +23,10 @@ The Syllabus was following...
 **Assignment Solutions** – This contains the Assignment solutions marked from 1 to 6.
 
 
-### Preffered TextBook
+### Preferred TextBook
 [Elmasri and Navathe Fundamentals of Database Management System](https://github.com/aryan-upa/DBMS_Sem3/blob/474881ccade62e15c7bd663353f8c2b7116826f9/Miscellaneous/DBMS_Navathe_6th%20Edition.pdf)
 
+### Helpful Youtube Links
+[DBMS Playlist by Gate Smashers](https://youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y)
+
+[How to install MySQL on windows 10 [2020]](https://youtu.be/7aenFzYpWpw)
